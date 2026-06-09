@@ -32,8 +32,12 @@ a {
   color: inherit;
   text-decoration: none;
 }
+.site-header{
+  width: min(100%, calc(100% - 100px));
+  margin-inline: auto;
+}
 
-.site-header,
+
 .hero,
 .path-panel,
 .ecosystem,
@@ -42,6 +46,7 @@ a {
 .therapist-section,
 .journey,
 .stats,
+.support-form-section,
 .site-footer {
   width: min(1540px, calc(100% - 92px));
   margin-inline: auto;
@@ -51,13 +56,26 @@ a {
   position: sticky;
   top: 0;
   z-index: 30;
+  width: min(1720px, calc(100% - 60px));
   display: grid;
   grid-template-columns: auto auto 1fr auto;
   align-items: center;
   gap: 24px;
   padding: 23px 0 13px;
-  background: linear-gradient(180deg, rgba(255, 250, 253, .94), rgba(255, 250, 253, .7));
   backdrop-filter: blur(16px);
+}
+
+.site-header::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: -1;
+  width: 100vw;
+  content: "";
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, rgba(255, 250, 253, .96), rgba(255, 250, 253, .82));
+  box-shadow: 0 18px 48px rgba(18, 32, 82, .07);
 }
 
 .brand {
@@ -82,6 +100,15 @@ a {
   font-weight: 900;
   line-height: 1.05;
   text-transform: uppercase;
+}
+
+.clinic-mark img {
+  width: 48px;
+  height: 48px;
+  display: block;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 22px rgba(238, 42, 130, .13);
 }
 
 .clinic-mark small {
@@ -547,7 +574,9 @@ h2 span,
 }
 
 .path-panel {
-  padding: 22px 22px 18px;
+  margin-top: 54px;
+  padding: 42px 28px 36px;
+  min-height: 430px;
   border: 1px solid var(--line);
   border-radius: 17px;
   background: var(--card);
@@ -574,12 +603,12 @@ h2 span,
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  margin-top: 22px;
+  margin-top: 34px;
 }
 
 .path-card {
-  min-height: 286px;
-  padding: 25px 24px 22px;
+  min-height: 330px;
+  padding: 32px 28px 26px;
   border: 1px solid var(--line);
   border-radius: 14px;
   background: rgba(255, 255, 255, .9);
@@ -657,7 +686,8 @@ h2 span,
   display: grid;
   grid-template-columns: 1fr 1.15fr;
   gap: 20px;
-  margin-top: 28px;
+  margin-top: 64px;
+  margin-bottom: 54px;
 }
 
 .channel {
@@ -842,7 +872,8 @@ h2 span,
 
 .banner {
   max-width: 930px;
-  margin-top: 0;
+  margin-top: 56px;
+  margin-bottom: 46px;
   padding: 21px 34px;
   text-align: center;
   border-radius: 18px;
@@ -1038,8 +1069,8 @@ h2 span,
 .therapist-section {
   position: relative;
   overflow: hidden;
-  margin-top: 38px;
-  padding: 44px 0 46px;
+  margin-top: 52px;
+  padding: 54px 0 66px;
   text-align: center;
 }
 
@@ -1076,22 +1107,22 @@ h2 span,
 .therapist-plans {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px;
+  gap: 34px;
   align-items: end;
-  margin-top: 56px;
+  margin-top: 78px;
 }
 
 .therapist-card {
   position: relative;
   --plan-link: var(--pink);
-  min-height: 388px;
-  padding: 98px 28px 26px;
+  min-height: 520px;
+  padding: 172px 14px 14px;
   border: 3px solid currentColor;
-  border-radius: 110px 8px 110px 8px;
+  border-radius: 112px 8px 112px 8px;
   color: var(--pink);
   background:
-    radial-gradient(circle at 12% 15%, rgba(255, 255, 255, .34), transparent 12%),
-    currentColor;
+    radial-gradient(circle at 12% 20%, rgba(255, 255, 255, .92) 0 9%, transparent 10%),
+    linear-gradient(180deg, #fff 0 31%, currentColor 32% 100%);
   box-shadow: 0 22px 46px rgba(35, 47, 92, .12);
   transition: transform .25s ease, box-shadow .25s ease;
 }
@@ -1116,7 +1147,7 @@ h2 span,
 }
 
 .therapist-card.standard {
-  min-height: 410px;
+  min-height: 560px;
   --plan-link: #2fa4ae;
   color: #2fa4ae;
   border-radius: 118px 8px 118px 8px;
@@ -1134,53 +1165,53 @@ h2 span,
 
 .plan-badge {
   position: absolute;
-  top: -44px;
-  right: 14px;
+  top: -34px;
+  right: 12px;
   min-width: 156px;
-  padding: 15px 20px;
+  padding: 17px 20px;
   border-radius: 8px;
-  color: #f6ecec;
-  background: black;
+  color: #fff;
+  background: var(--plan-link);
   font-size: 20px;
   font-weight: 900;
 }
 
 .standard .plan-badge {
-  top: -48px;
+  top: -38px;
   right: 20px;
 }
 
 .plan-discount {
   position: absolute;
-  left: 20px;
-  top: 18px;
+  left: 18px;
+  top: 20px;
   display: grid;
   place-items: center;
-  width: 70px;
-  height: 70px;
+  width: 92px;
+  height: 92px;
   border-radius: 50%;
-  color: #f5f3f3;
-  background: var(--pink);
+  color: #fff;
+  background: var(--plan-link);
   border: 6px solid #fff;
-  font-size: 18px;
+  font-size: 21px;
   font-weight: 900;
   box-shadow: 0 12px 26px rgba(35, 47, 92, .13);
 }
 
 .therapist-card h3 {
   position: absolute;
-  top: 34px;
-  left: 112px;
+  top: 104px;
+  left: 110px;
   right: 24px;
   z-index: 2;
   min-height: 0;
   margin: 0;
-  padding: 16px 18px;
-  border-radius: 10px;
+  padding: 0;
+  border-radius: 0;
   color: #050713;
-  background: rgba(255, 255, 255, .96);
-  box-shadow: 0 14px 30px rgba(35, 47, 92, .1);
-  font-size: 25px;
+  background: transparent;
+  box-shadow: none;
+  font-size: 27px;
   font-weight: 850;
   line-height: 1.18;
 }
@@ -1188,9 +1219,9 @@ h2 span,
 .plan-body {
   display: grid;
   align-content: center;
-  min-height: 252px;
+  min-height: 322px;
   margin-top: 0;
-  padding: 18px 20px 16px;
+  padding: 34px 34px 28px;
   color: #07112f;
 }
 
@@ -1224,7 +1255,14 @@ h2 span,
 }
 
 .journey {
-  padding: 38px 0 22px;
+  min-height: 360px;
+  padding: 66px 0 54px;
+}
+
+.journey h2 {
+  color: var(--teal);
+  font-size: 44px;
+  font-weight: 900;
 }
 
 .timeline {
@@ -1232,7 +1270,7 @@ h2 span,
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
-  margin-top: 42px;
+  margin-top: 58px;
 }
 
 .timeline::before {
@@ -1308,6 +1346,338 @@ h2 span,
   color: var(--muted);
   font-size: 12px;
   font-weight: 850;
+}
+
+.support-form-section {
+  padding: 54px 0 62px;
+}
+
+.support-form-card {
+  display: grid;
+  grid-template-columns: 1fr 1.08fr;
+  gap: 42px;
+  padding: 42px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 39% 50%, rgba(238, 42, 130, .12), transparent 22%),
+    radial-gradient(circle at 55% 49%, rgba(126, 98, 214, .14), transparent 24%),
+    rgba(255, 255, 255, .9);
+  box-shadow: 0 26px 70px rgba(18, 32, 82, .13);
+}
+
+.support-intro {
+  position: relative;
+  min-height: 560px;
+  padding: 28px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #fff6fb, #ffffff 58%, #f0f6ff);
+}
+
+.support-intro::after {
+  position: absolute;
+  right: -42px;
+  top: 58px;
+  width: 320px;
+  height: 430px;
+  content: "";
+  border-radius: 52% 48% 46% 54%;
+  background:
+    radial-gradient(ellipse at 42% 18%, rgba(91, 61, 184, .18), transparent 42%),
+    radial-gradient(ellipse at 52% 72%, rgba(238, 42, 130, .16), transparent 48%);
+  filter: blur(.2px);
+}
+
+.form-kicker {
+  margin: 0 0 20px;
+  color: var(--pink);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.support-intro h2 {
+  position: relative;
+  z-index: 2;
+  max-width: 430px;
+  margin: 0;
+  color: var(--ink);
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.12;
+}
+
+.support-intro h2 span {
+  color: var(--pink);
+}
+
+.form-rule {
+  width: 54px;
+  height: 3px;
+  margin: 20px 0 16px;
+  border-radius: 999px;
+  background: var(--pink);
+}
+
+.support-intro > p {
+  position: relative;
+  z-index: 2;
+  max-width: 390px;
+  color: #25305d;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+.support-points {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 16px;
+  max-width: 410px;
+  margin-top: 28px;
+}
+
+.support-points article {
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .82);
+  box-shadow: 0 12px 28px rgba(18, 32, 82, .08);
+}
+
+.support-points b,
+.support-points span {
+  display: block;
+}
+
+.support-points b {
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.support-points span {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.urgent-help {
+  position: absolute;
+  left: 28px;
+  bottom: 30px;
+  z-index: 3;
+  width: min(360px, calc(100% - 56px));
+  padding: 18px 22px;
+  border: 1px solid rgba(238, 42, 130, .12);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .88);
+  box-shadow: 0 18px 42px rgba(18, 32, 82, .12);
+}
+
+.urgent-help strong,
+.urgent-help span,
+.urgent-help small {
+  display: block;
+}
+
+.urgent-help strong {
+  color: var(--pink);
+  font-size: 14px;
+}
+
+.urgent-help span,
+.urgent-help small {
+  margin-top: 5px;
+  color: #25305d;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.urgent-help a {
+  font-weight: 900;
+}
+
+.care-form {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  padding: 34px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, .94);
+  box-shadow: 0 18px 48px rgba(18, 32, 82, .12);
+}
+
+.care-form h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.care-form > p {
+  margin: -8px 0 4px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.care-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.care-options label {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 10px;
+  min-height: 118px;
+  padding: 18px;
+  border: 1px solid #dfe5f2;
+  border-radius: 12px;
+  cursor: pointer;
+  background: #fff;
+  transition: border-color .22s ease, box-shadow .22s ease, transform .22s ease;
+}
+
+.care-options label:hover {
+  transform: translateY(-3px);
+  border-color: rgba(238, 42, 130, .42);
+  box-shadow: 0 16px 32px rgba(18, 32, 82, .09);
+}
+
+.care-options .online-choice {
+  border-color: rgba(238, 42, 130, .28);
+  background: linear-gradient(135deg, rgba(238, 42, 130, .08), #fff);
+}
+
+.care-options .clinic-choice {
+  border-color: rgba(7, 119, 219, .28);
+  background: linear-gradient(135deg, rgba(7, 119, 219, .08), #fff);
+}
+
+.care-options .clinic-choice input {
+  accent-color: var(--blue);
+}
+
+.care-options .clinic-choice b {
+  color: var(--blue);
+}
+
+.care-options label:has(input:checked) {
+  border-width: 2px;
+  box-shadow: 0 16px 34px rgba(18, 32, 82, .11);
+}
+
+.care-options input {
+  accent-color: var(--pink);
+}
+
+.care-options span {
+  align-self: center;
+}
+
+.care-options b,
+.care-options small {
+  display: block;
+}
+
+.care-options b {
+  color: var(--pink);
+  font-size: 14px;
+}
+
+.care-options small {
+  margin-top: 4px;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.care-form input[type="text"],
+.care-form input[type="tel"],
+.care-form textarea {
+  width: 100%;
+  border: 1px solid #dfe5f2;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  outline: none;
+  transition: border-color .22s ease, box-shadow .22s ease;
+}
+
+.care-form input[type="text"],
+.care-form input[type="tel"] {
+  min-height: 52px;
+  padding: 0 16px;
+}
+
+.care-form textarea {
+  min-height: 104px;
+  resize: vertical;
+  padding: 16px;
+}
+
+.care-form input:focus,
+.care-form textarea:focus {
+  border-color: rgba(238, 42, 130, .6);
+  box-shadow: 0 0 0 4px rgba(238, 42, 130, .08);
+}
+
+.upload-box {
+  display: grid;
+  place-items: center;
+  min-height: 76px;
+  border: 1px dashed rgba(91, 61, 184, .5);
+  border-radius: 12px;
+  color: var(--violet);
+  cursor: pointer;
+  background: #fbf9ff;
+  font-weight: 900;
+}
+
+.upload-box input {
+  display: none;
+}
+
+.upload-box small {
+  margin-top: -10px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.care-form button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 58px;
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--pink), #d848c9);
+  font: inherit;
+  font-weight: 900;
+  padding: 0 24px;
+  box-shadow: 0 16px 34px rgba(238, 42, 130, .2);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+
+.care-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 44px rgba(238, 42, 130, .26);
+}
+
+.privacy-note {
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
 }
 
 .site-footer {
@@ -1478,7 +1848,8 @@ h2 span,
 
   .hero,
   .ecosystem,
-  .trust-layout {
+  .trust-layout,
+  .support-form-card {
     grid-template-columns: 1fr;
   }
 
@@ -1490,10 +1861,6 @@ h2 span,
   .therapist-plans,
   .stats {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .therapist-card.standard {
-    min-height: 430px;
   }
 
   .timeline {
@@ -1516,6 +1883,7 @@ h2 span,
   .therapist-section,
   .journey,
   .stats,
+  .support-form-section,
   .site-footer {
     width: min(100% - 28px, 720px);
   }
@@ -1629,16 +1997,16 @@ h2 span,
   .therapist-card,
   .therapist-card.standard,
   .therapist-card.supreme {
-    min-height: 382px;
-    padding: 96px 22px 24px;
+    min-height: 500px;
+    padding: 156px 18px 22px;
     border-radius: 86px 8px 86px 8px;
   }
 
   .therapist-card h3 {
-    left: 96px;
+    left: 104px;
     right: 18px;
-    top: 32px;
-    padding: 14px 14px;
+    top: 94px;
+    padding: 0;
     font-size: 21px;
   }
 
@@ -1653,6 +2021,28 @@ h2 span,
   .clinic-channel {
     grid-template-columns: 1fr;
     padding: 24px;
+  }
+
+  .support-form-card {
+    padding: 18px;
+    gap: 18px;
+  }
+
+  .support-intro {
+    min-height: 560px;
+    padding: 22px;
+  }
+
+  .support-intro h2 {
+    font-size: 36px;
+  }
+
+  .care-form {
+    padding: 22px;
+  }
+
+  .care-options {
+    grid-template-columns: 1fr;
   }
 
   .channel ul,
