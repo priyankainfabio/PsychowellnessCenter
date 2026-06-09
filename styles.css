@@ -574,6 +574,7 @@ h2 span,
 }
 
 .path-panel {
+  width: min(1680px, calc(100% - 56px));
   margin-top: 54px;
   padding: 42px 28px 36px;
   min-height: 430px;
@@ -916,9 +917,9 @@ h2 span,
   inset: 0;
   background:
     linear-gradient(90deg, rgba(17, 26, 69, .1), rgba(17, 26, 69, .2) 46%, rgba(255, 246, 250, .72) 47%),
-    url("https://images.pexels.com/photos/32837413/pexels-photo-32837413.jpeg?auto=compress&cs=tinysrgb&w=900");
+    url("https://www.psychowellnesscenter.com/wp-content/uploads/2025/04/Dr-R-K-Suri.jpg");
   background-size: cover;
-  background-position: 16% 50%;
+  background-position: 28% 50%;
 }
 
 .quote-card blockquote,
