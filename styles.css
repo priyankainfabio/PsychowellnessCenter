@@ -589,9 +589,9 @@ h2 span,
 .journey h2 {
   margin: 0;
   text-align: center;
-  font-size: 30px;
+  font-size: 50px;
   font-weight: 900;
-  letter-spacing: 0;
+  letter-spacing: 1.2px;
 }
 
 .path-panel h2 span,
@@ -916,10 +916,9 @@ h2 span,
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(17, 26, 69, .1), rgba(17, 26, 69, .2) 46%, rgba(255, 246, 250, .72) 47%),
     url("https://www.psychowellnesscenter.com/wp-content/uploads/2025/04/Dr-R-K-Suri.jpg");
   background-size: cover;
-  background-position: 28% 50%;
+  background-position: 50% 80%;
 }
 
 .quote-card blockquote,
@@ -932,15 +931,15 @@ h2 span,
 }
 
 .quote-card blockquote {
-  margin-top: 82px;
-  color: #3f36a0;
+  margin-top: 900px;
+  color: rgba(249, 65, 148, 0.986);
   font-size: 25px;
   font-weight: 900;
   line-height: 1.28;
 }
 
 .quote-card p {
-  color: #111a45;
+  color: #edeef3;
   font-weight: 900;
 }
 
