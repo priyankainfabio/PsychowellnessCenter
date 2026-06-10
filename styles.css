@@ -295,7 +295,7 @@ a {
 }
 
 .hero-focus strong {
-  color: var(--pink);
+  color: var(--blue);
 }
 
 .hero-focus li:nth-child(3) strong,
@@ -410,8 +410,8 @@ a {
 .orbital-stage::before,
 .orbital-stage::after {
   position: absolute;
-  top: 64px;
-  bottom: 28px;
+  top: 70px;
+  bottom: 30px;
   width: 48%;
   content: "";
   border: 1px solid rgba(255, 255, 255, .65);
@@ -522,8 +522,8 @@ a {
   animation: fountainOut 1s cubic-bezier(.17, .9, .22, 1.18) forwards;
   animation-delay: var(--delay);
   transition: margin .18s ease, box-shadow .22s ease;
+  
 }
-
 .care-chip:hover {
   box-shadow: 0 26px 48px rgba(19, 32, 85, .23);
 }
@@ -1211,7 +1211,7 @@ h2 span,
   color: #050713;
   background: transparent;
   box-shadow: none;
-  font-size: 27px;
+  font-size: 24px;
   font-weight: 850;
   line-height: 1.18;
 }
@@ -1222,7 +1222,7 @@ h2 span,
   min-height: 322px;
   margin-top: 0;
   padding: 34px 34px 28px;
-  color: #07112f;
+  color: #fbfcff;
 }
 
 .plan-body strong {
@@ -1233,7 +1233,7 @@ h2 span,
 
 .plan-body p {
   margin: 20px 0 26px;
-  color: #07112f;
+  color: #fcfcff;
   font-size: 15px;
   font-weight: 800;
   line-height: 1.55;
