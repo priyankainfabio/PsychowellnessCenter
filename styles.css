@@ -916,7 +916,7 @@ h2 span,
   position: absolute;
   inset: 0;
   background:
-    url("/assets/Dr-R-K-Suri.webp");
+    url("/assets/Dr-R-K-Suri.png");
   background-size: cover;
   background-position: 50% 80%;
 }
@@ -932,7 +932,7 @@ h2 span,
 
 .quote-card blockquote {
   margin-top: 800px;
-  color: rgb(7, 91, 248);
+  color: rgb(251, 252, 254);
   font-size: 25px;
   font-weight: 900;
   line-height: 1.28;
